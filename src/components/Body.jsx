@@ -78,7 +78,15 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="bg-green-500 text-white py-2 px-6 rounded-md "
+          className="bg-black text-white py-2 px-6 rounded-md "
+          onClick={() => {
+            setFilteredRestaurants(listOfRestaurants);
+          }}
+        >
+          All Restaurant
+        </button>
+        <button
+          className="bg-black mx-8 text-white py-2 px-6 rounded-md "
           onClick={() => {
             setFilteredRestaurants(
               filteredRestaurants.filter(
