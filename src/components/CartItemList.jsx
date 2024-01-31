@@ -24,7 +24,7 @@ const CardItemList = ({ items }) => {
         return (
           <div
             key={cardId}
-            className="w-6/12 mx-auto px-2 pb-2 mb-2 border-gray-200 border-b-2 text-left flex justify-between"
+            className="w-11/12 mx-auto px-2 pb-2 mb-2 border-gray-200 border-b-2 text-left flex justify-between"
           >
             <div className="w-9/12 mx-auto">
               <div className="py-2 mx-auto">
@@ -51,7 +51,7 @@ const CardItemList = ({ items }) => {
           </div>
         );
       })}
-      <div>Item total : {totalMoney} </div>
+      {/* <div>Item total : {totalMoney} </div> */}
     </div>
   );
 };
