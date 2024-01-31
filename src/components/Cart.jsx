@@ -14,7 +14,10 @@ const Cart = () => {
       <h1 className="font-bold text-3xl">Cart</h1>
       <button className="bg-black rounded-lg px-2 py-1 text-white my-2 text-xl" onClick={handleClearCart}>Clear Cart</button>
       {cartItems.length ===0 && <h1>Cart is Empty. Add items to Cart!</h1>}
+      
       <CardItemList items={dataToBeSent} />
+      
+
     </div>
   );
 };
