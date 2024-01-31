@@ -12,7 +12,7 @@ export default Header = () => {
 
   return (
     <div className="flex justify-between sticky top-0 shadow-md mb-8 z-12 bg-white">
-      <div className="p-5">
+      <div className="p-4 cursor-pointer hover:scale-105 duration-200">
         <img className="w-20 rounded-lg" src={LOGO_URL} />
       </div>
       <div className="m-auto mr-3 ">
