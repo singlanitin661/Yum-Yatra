@@ -63,7 +63,7 @@ const Body = () => {
         <div className="flex-grow">
           <input
             type="text"
-            className="p-2 px-8 border border-gray-300 rounded-md mr-2"
+            className="p-2 w-72 px-8 border text-lg shadow-lg border-[#e2e2e6] text-[#424449] rounded-3xl ml-8 mr-2"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             placeholder="Search..."
@@ -72,13 +72,13 @@ const Body = () => {
             onClick={() => {
               searchData(searchText, listOfRestaurants);
             }}
-            className="bg-blue-500 text-white py-2 px-6 rounded-md"
+            className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl"
           >
             Search
           </button>
         </div>
         <button
-          className="bg-black text-white py-2 px-6 rounded-md "
+          className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl "
           onClick={() => {
             setFilteredRestaurants(listOfRestaurants);
           }}
@@ -86,7 +86,19 @@ const Body = () => {
           All Restaurant
         </button>
         <button
-          className="bg-black mx-8 text-white py-2 px-6 rounded-md "
+          className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl mx-2"
+          onClick={() => {
+            setFilteredRestaurants(
+              filteredRestaurants.filter(
+                (restaurant) => restaurant?.info?.veg
+              )
+            );
+          }}
+        >
+          Pure Veg
+        </button>
+        <button
+          className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl mr-8"
           onClick={() => {
             setFilteredRestaurants(
               filteredRestaurants.filter(
@@ -95,7 +107,7 @@ const Body = () => {
             );
           }}
         >
-          Top Rated Restaurant
+          Rating 4.0+
         </button>
       </div>
       <div className="flex flex-wrap justify-center items-center mx-8">
