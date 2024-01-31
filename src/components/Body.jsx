@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { swiggy_api_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Footer from "./Footer";
 
 function filterData(searchText, restaurants) {
   const resFilterData = restaurants.filter((restaurant) =>
@@ -58,6 +59,7 @@ const Body = () => {
   }
 
   return (
+    <>
     <div className="body">
       <div className="flex m-4 mx-24 mb-12">
         <div className="flex-grow">
@@ -128,7 +130,10 @@ const Body = () => {
           </Link>
         ))}
       </div>
+      
     </div>
+    <Footer/>
+    </>
   );
 };
 
