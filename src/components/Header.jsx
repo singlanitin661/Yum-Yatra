@@ -12,7 +12,7 @@ export default Header = () => {
   const cartItems = useSelector((store) => store.cart.items) ;
 
   return (
-    <div className="flex justify-between sticky top-0 shadow-md mb-8 top-0 z-12 bg-white">
+    <div className="flex justify-between sticky top-0 shadow-md mb-8 z-12 bg-white">
       <div className="p-5">
         <img className="w-20 rounded-lg" src={LOGO_URL} />
       </div>
