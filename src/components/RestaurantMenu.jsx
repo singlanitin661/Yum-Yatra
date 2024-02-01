@@ -14,8 +14,7 @@ const RestaurantMenu = () => {
     else setShowIndex(index);
   };
 
-  // if (restaurant === null) return <MenuShimmer />;
-  return <MenuShimmer/>
+  if (restaurant === null) return <MenuShimmer />;
   return (
     <div className="">
       <div className="w-7/12 mx-auto px-5 flex flex-row justify-between">
@@ -38,7 +37,7 @@ const RestaurantMenu = () => {
             )}
           </div>
         </div>
-        <div className="border text-sm h-16 mt-8 mr-2 font-bold px-4 rounded-md text-center py-2 shadow-md border-[#e2e2e6] text-[#424449]">
+        <div className="border text-sm h-16 mt-8 mr-2 font-bold px-4 rounded-md text-center py-1 pb-3 shadow-md border-[#e2e2e6] text-[#424449]">
           <div className="flex fles-row pl-5">
             <StarIcon className="text-[#589971] pb-1" />
             <h1 className="text-[#589971]">{restaurant?.avgRating}</h1>
