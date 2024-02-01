@@ -2,7 +2,6 @@
   "name": "lec1part3",
   "version": "1.0.0",
   "description": "The costliest thing in dom is dom manupulation\r <br/>\r ```{}``` : The empty {} this was used to give attributes. \r Currently we have created a heading with no attribute , If we want to give\r an id to this heading \r ```{ id : \"heading\"}```",
-  "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -28,6 +27,7 @@
     "@mui/icons-material": "^5.15.6",
     "@mui/material": "^5.15.6",
     "@reduxjs/toolkit": "^2.1.0",
+    "firebase": "^10.7.2",
     "parcel": "^2.11.0",
     "parcel-bundler": "^1.12.5",
     "react": "^18.2.0",
