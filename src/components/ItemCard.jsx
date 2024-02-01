@@ -5,6 +5,7 @@ import ItemButton from "./ItemButton";
 const ItemCard = ({ items }) => {
   return (
     <div>
+      {console.log(items)}
       {items?.data?.map((item) => (
         <div
           key={item?.card?.info?.id}

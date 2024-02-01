@@ -1,6 +1,7 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
 import veg_logo from "./veg_logo.png";
+import StarIcon from '@mui/icons-material/Star';
 
 const ResCard = ({
   cloudinaryImageId,
@@ -33,14 +34,13 @@ const ResCard = ({
         </p>
         <p className="text-gray-700">{areaName}</p>
         <div className="flex items-center mt-2">
-          <p
-            className={`px-3 py-1 rounded-lg ${
-              avgRatingString < 4 ? "bg-red-600" : "bg-green-500"
-            } text-white`}
-          >
-            <span className="text-white">⭐</span>
-            {avgRatingString}
-          </p>
+          <div className={`flex flex-row items-center justify-center px-2 py-1 rounded-lg ${
+              avgRatingString < 4 ? "bg-gray-400" : "bg-[#0c7e0c]"
+            } text-white`}>
+          
+            <span className=""><StarIcon/></span>
+            <span className="font-bold">{avgRatingString}</span>
+          </div>
           <p className="ml-2">{sla?.lastMileTravelString ?? "2.0 km"}</p>
           <span className="mx-1">.</span>
           <p>{costForTwo ?? "₹200 for two"}</p>
