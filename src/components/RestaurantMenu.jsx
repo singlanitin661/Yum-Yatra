@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import StarIcon from "@mui/icons-material/Star";
+import MenuShimmer from "./MenuShimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -14,13 +14,14 @@ const RestaurantMenu = () => {
     else setShowIndex(index);
   };
 
-  if (restaurant === null) return <Shimmer />;
+  // if (restaurant === null) return <MenuShimmer />;
+  return <MenuShimmer/>
   return (
     <div className="">
       <div className="w-7/12 mx-auto px-5 flex flex-row justify-between">
         <div className="">
           <h1 className="font-bold text-2xl py-2">{restaurant?.name}</h1>
-          {console.log(restaurant)}
+          {/* {console.log(restaurant)} */}
           <h4 className="text-gray-500">{restaurant?.cuisines.join(" ,")}</h4>
 
           <h4 className="text-gray-500 pb-4">{restaurant?.locality}</h4>
