@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-export default Header = () => {
+const Header = () => {
   const [btn, setBtn] = useState("Login");
   const cartItems = useSelector((store) => store.cart.items);
 
@@ -48,3 +48,5 @@ export default Header = () => {
     </div>
   );
 };
+
+export default Header;
