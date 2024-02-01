@@ -18,7 +18,7 @@ const useRestaurantMenu = (resId) => {
                 ?.info || null;
         setRestaurant(restaurantData);
 
-        // Set menu item data
+
         const menuItemsData =
             json.data?.cards
                 .find((x) => x.groupedCard)

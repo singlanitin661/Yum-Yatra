@@ -20,7 +20,6 @@ const RestaurantMenu = () => {
       <div className="w-7/12 mx-auto px-5 flex flex-row justify-between">
         <div className="">
           <h1 className="font-bold text-2xl py-2">{restaurant?.name}</h1>
-          {/* {console.log(restaurant)} */}
           <h4 className="text-gray-500">{restaurant?.cuisines.join(" ,")}</h4>
 
           <h4 className="text-gray-500 pb-4">{restaurant?.locality}</h4>
@@ -29,7 +28,7 @@ const RestaurantMenu = () => {
             <p className="w-36 border py-1  text-md shadow-sm border-[#e2e2e6] text-[#424449] px-6 rounded-3xl ">
               {restaurant?.costForTwoMessage}
             </p>
-            {restaurant?.costForTwoMessage && (
+            {restaurant?.veg && (
               <p className="w-44 border py-1 text-md shadow-sm border-[#e2e2e6] text-[#424449] px-6 rounded-3xl ">
                 {" "}
                 🥦 PURE VEG

@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { CDN_URL } from "../utils/constants";
 import CartItemButton from "./CartItemButton";
 
 const CardItemList = ({ items }) => {
-  // Create a Map to keep track of the count for each unique card ID
   const cardIdCountMap = new Map();
-  const [totalMoney, setTotalMoney] = useState(0);
 
   items?.data?.forEach((item) => {
     const cardId = item?.card?.info?.id;
-    // setTotalMoney((prevSum) => prevSum + item?.card?.info?.defaultPrice / 100);
     if (!cardIdCountMap.has(cardId)) {
       cardIdCountMap.set(cardId, { item, count: 1 });
     } else {
@@ -51,7 +48,6 @@ const CardItemList = ({ items }) => {
           </div>
         );
       })}
-      {/* <div>Item total : {totalMoney} </div> */}
     </div>
   );
 };

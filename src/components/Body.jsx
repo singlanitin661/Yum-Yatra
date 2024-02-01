@@ -5,7 +5,6 @@ import { swiggy_api_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Footer from "./Footer";
-// import BodyCarousel from "./BodyCarousel";
 
 function filterData(searchText, restaurants) {
   const resFilterData = restaurants.filter((restaurant) =>
@@ -19,7 +18,6 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
-  // const [bodyCarouselData , setBodyCarouselData] = useState(null) ;
 
   const PromotedComp = withPromoted(ResCard);
 
@@ -40,15 +38,6 @@ const Body = () => {
     try {
       const response = await fetch(swiggy_api_URL);
       const data = await response.json();
-      // const resData =
-      //   data?.data?.cards
-      //     ?.map(
-      //       (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      //     )
-      //     .find((restaurants) => restaurants !== undefined) || [];
-
-      // setBodyCarouselData(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info) ;
-      // console.log(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info) ;
       const resData =
         data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
