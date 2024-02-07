@@ -56,7 +56,7 @@ const Body = () => {
 
   return (
     <div className="">
-      <div className="body">
+      <div className="body min-h-[69.5vh]">
         <div className="flex m-4 mx-24 mb-12">
           <div className="flex-grow">
             <input
@@ -67,7 +67,8 @@ const Body = () => {
               placeholder="Search..."
             />
             <button
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 searchData(searchText, listOfRestaurants);
               }}
               className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl"
@@ -78,6 +79,7 @@ const Body = () => {
           <button
             className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl "
             onClick={() => {
+              setSearchText("")
               setFilteredRestaurants(listOfRestaurants);
             }}
           >
@@ -86,6 +88,7 @@ const Body = () => {
           <button
             className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl mx-2"
             onClick={() => {
+              setSearchText("")
               setFilteredRestaurants(
                 filteredRestaurants.filter(
                   (restaurant) => restaurant?.info?.veg
@@ -98,6 +101,7 @@ const Body = () => {
           <button
             className="border text-lg shadow-lg border-[#e2e2e6] text-[#424449] py-2 px-6 rounded-3xl mr-8"
             onClick={() => {
+              setSearchText("")
               setFilteredRestaurants(
                 filteredRestaurants.filter(
                   (res) => res?.info?.avgRatingString > 4
@@ -109,22 +113,28 @@ const Body = () => {
           </button>
         </div>
         <div className="flex flex-wrap justify-center items-center mx-8">
-          {filteredRestaurants.map((restaurant) => (
-            <Link
-              key={restaurant?.info?.id}
-              to={"/restaurant/" + restaurant?.info?.id}
-            >
-              <div className="mx-4 hover:scale-95">
-                {restaurant?.info?.veg ? (
-                  <PromotedComp {...restaurant?.info} />
-                ) : (
-                  <div>
-                    <ResCard {...restaurant?.info} />
-                  </div>
-                )}
-              </div>
-            </Link>
-          ))}
+          {filteredRestaurants.length === 0 ? (
+            <p className="text-3xl text-gray-500">
+              Nothing to display. Try Changing the filters...
+            </p>
+          ) : (
+            filteredRestaurants.map((restaurant) => (
+              <Link
+                key={restaurant?.info?.id}
+                to={"/restaurant/" + restaurant?.info?.id}
+              >
+                <div className="mx-4 hover:scale-95">
+                  {restaurant?.info?.veg ? (
+                    <PromotedComp {...restaurant?.info} />
+                  ) : (
+                    <div>
+                      <ResCard {...restaurant?.info} />
+                    </div>
+                  )}
+                </div>
+              </Link>
+            ))
+          )}
         </div>
       </div>
       <Footer className="" />

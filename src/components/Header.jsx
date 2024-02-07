@@ -10,8 +10,8 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="flex justify-between shadow-md mb-8 z-12 bg-white">
-      <div className="p-4 cursor-pointer hover:scale-110 duration-200">
+    <div className="flex justify-between w-full shadow-md mb-8 z-12 bg-white">
+      <div className="p-4 pl-8 cursor-pointer hover:scale-110 duration-200">
         <Link to="/">
           <img className="w-16" src={LOGO} />
         </Link>

@@ -8,8 +8,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Contact from "./components/Contact";
 
-const Contact = lazy(() => import("./components/Contact"));
 const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   return (
@@ -41,9 +41,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: (
-          <Suspense>
-            <Contact />
-          </Suspense>
+            <Contact/> 
         ),
       },
       {
