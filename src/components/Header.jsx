@@ -12,14 +12,14 @@ const Header = () => {
   return (
     <div className="flex justify-between w-full shadow-md mb-8 z-12 bg-white">
       <div className="p-4 pl-8 cursor-pointer hover:scale-110 duration-200">
-        <Link to="/">
+        <Link to="/home">
           <img className="w-16" src={LOGO} />
         </Link>
       </div>
       <div className="m-auto mr-3 ">
         <ul className="flex justify-between gap-5 text-xl">
           <li className="">
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li className="">
             <Link to="/about">About</Link>

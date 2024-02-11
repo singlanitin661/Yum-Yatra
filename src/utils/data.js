@@ -1,3 +1,34 @@
+export const heroData = [
+    {
+        id: 1,
+        name: "Icecream",
+        decp: "Chocolate & vanilla",
+        price: "60",
+        imageSrc: "https://campusdeliveryapp.web.app/static/media/i1.3d9b129d2c5432c6f1fb.png",
+    },
+    {
+        id: 2,
+        name: "Strawberries",
+        decp: "Fresh Strawberries",
+        price: "70",
+        imageSrc: "https://campusdeliveryapp.web.app/static/media/f1.c52686695ee9a5c4cd0d.png",
+    },
+    {
+        id: 3,
+        name: "Chicken Kebab",
+        decp: "Mixed Kebab Plate",
+        price: "90",
+        imageSrc: "https://campusdeliveryapp.web.app/static/media/c3.55f83414f33f66456b35.png",
+    },
+    {
+        id: 4,
+        name: "Fish Kebab",
+        decp: "Mixed Fish Kebab",
+        price: "110",
+        imageSrc: "https://campusdeliveryapp.web.app/static/media/fi1.3f43e51b6058550d1f44.png",
+    },
+];
+
 export const restaurantList = [
     {
         type: "restaurant",
