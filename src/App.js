@@ -9,14 +9,12 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 import Contact from "./components/Contact";
-import Intro from "./components/Intro";
-
 const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   return (
     <Provider store={appStore}>
       <div className="app">
-
+        <Header />
         <Outlet />
       </div>
     </Provider>
@@ -29,17 +27,17 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Intro />
+        element: <Body />,
       },
       {
         path: "/home",
-        element: <><Header /><Body /></>,
+        element: <Body />,
       },
       {
         path: "/about",
         element: (
           <Suspense>
-            <><Header /><About /></>
+            <About />
           </Suspense>
         ),
       },
@@ -47,17 +45,17 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: (
 
-          <><Header /><Contact /></>
+          <Contact />
         ),
       },
       {
         path: "/cart",
         element:
-          <><Header /><Cart /></>,
+          <Cart />,
       },
       {
         path: "/restaurant/:resId",
-        element: <><Header /><RestaurantMenu /></>,
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <Error />,
